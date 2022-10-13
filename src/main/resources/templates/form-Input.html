@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <form action="#" th:action="@{/submit-form}" method="post" th:object="${student}">
+            <label>Name</label>
+            <input type="text" th:field="*{Name}">
+            <label>Age</label>
+            <input type="text" th:field="*{Age}">
+            <label>Gender</label>
+            <select th:field="*{Gender}">
+                <option value="NONE" label="select"></option>
+                <option th:each="p : ${list}" th:value="${p}" th:text="${p}"></option>
+            </select>
+            <input type="submit" value="Click">
+        </form>
+    </body>
+</html>
